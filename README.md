@@ -5,7 +5,7 @@ xsltproc scan.xml -o scan.html
 
 TCP SYN/ACK pings
 ```
-sudo nmap -PS22,80,443 -PA80,443 <IP> -sn -n
+sudo nmap -vv -PS22,80,443 -PA80,443 <IP> -sn -n
 ```
 
 Slower/quieter SYN scan
@@ -20,5 +20,5 @@ nmap -vv -sU -p <PORT> <IP> -Pn -n
 
 Basic DNS enum
 ```
-nmap --script=dns-nsid <IP>
+nmap -vv --script=dns-nsid <IP>
 ```
