@@ -1,4 +1,4 @@
-XML to HTML (saved with -oX)
+XML (saved with -oX) to HTML
 ```
 xsltproc scan.xml -o scan.html
 ```
