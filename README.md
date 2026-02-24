@@ -20,5 +20,5 @@ nmap -vv -sU -p <PORT> <IP> -Pn -n
 
 Basic DNS enum
 ```
-nmap -script=dns-nsid <IP>
+nmap --script=dns-nsid <IP>
 ```
