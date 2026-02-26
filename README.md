@@ -18,7 +18,7 @@ UDP Probe
 sudo nmap -vv -Pn -n -sU -p PORT HOST
 ```
 
-Bash Reverse Shell
+Python3 Reverse Shell
 ```
 sudo nc -lvnp 80
 ```
